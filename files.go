@@ -127,7 +127,7 @@ func (c *FileService) UploadFile(filePath, parentId string) (*http.Response, *Fi
 		return nil, nil, err
 	}
 
-	var data *FileCollection
+	data := new(FileCollection)
 	resp, err := c.Do(req, data)
 	return resp, data, err
 }
